@@ -2,8 +2,10 @@ import React,{useState,useEffect} from "react";
 import moment from "moment";
 import axios from "axios";
 import AirportSuggetions from "./AirportSuggestions";
-const SearchForm = () => {
+import { useNavigate } from "react-router-dom";
 
+const SearchForm = () => {
+    const navigate = useNavigate();
     const [airports, setAirports] = useState([]);
     const [filteredAirports, setFilteredAirports] = useState('');
     
@@ -63,7 +65,9 @@ const SearchForm = () => {
        else if(departureAirport && parkingCheckIn && parkingCheckOut)
         {
             alert("Form Submitted")
-            window.location.href = `/results?departureAirport=${departureAirport}&checkin=${parkingCheckIn}&checkout=${parkingCheckOut}`
+            
+            navigate(`/results?departureAirport=${departureAirport}&checkin=${parkingCheckIn}&checkout=${parkingCheckOut}`)
+            //window.location.href = `/results?departureAirport=${departureAirport}&checkin=${parkingCheckIn}&checkout=${parkingCheckOut}`
 
         }
         else{

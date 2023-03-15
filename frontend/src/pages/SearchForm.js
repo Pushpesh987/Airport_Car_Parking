@@ -2,7 +2,7 @@ import React,{useState,useEffect} from "react";
 import moment from "moment";
 import axios from "axios";
 // import { Link } from "react-router-dom";
-import AirportSuggestions from "./AirportSuggestions";
+import AirportSuggestions from "../components/AirportSuggestions";
 const SearchForm = () => {
 
     const [airports, setAirports] = useState([]);
@@ -167,7 +167,7 @@ const SearchForm = () => {
                                 className="col-sm-6 p-0 pr-sm-3 date_input">
                                 <div className="heading mb-1">Parking Check-In</div>
                                 <div className="placeholder">
-                                    <input name="checkin" type="date" placeholder="Parking Check-Out" onChange={parkingCheckInHandler} value={parkingCheckIn} className="placeholder placeholder-airport" style={{width:"100%"}}/>
+                                    <input name="checkin" type="date" placeholder="Parking Check-In" onChange={parkingCheckInHandler} value={parkingCheckIn} className="placeholder placeholder-airport" style={{width:"100%"}}/>
                                 {(errors && errors.parkingCheckIn)? <h2 style={{color: "white",backgroundColor:"Highlight"}}>Invaild Parking Check-In</h2>:null}
                                 </div> 
                             </label> <label className="col-sm-6 p-0 pl-sm-0 date_input">

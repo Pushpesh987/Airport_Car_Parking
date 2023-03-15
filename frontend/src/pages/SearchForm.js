@@ -1,11 +1,10 @@
 import React,{useState,useEffect} from "react";
 import moment from "moment";
 import axios from "axios";
-import AirportSuggetions from "./AirportSuggestions";
-import { useNavigate } from "react-router-dom";
-
+// import { Link } from "react-router-dom";
+import AirportSuggestions from "./AirportSuggestions";
 const SearchForm = () => {
-    const navigate = useNavigate();
+
     const [airports, setAirports] = useState([]);
     const [filteredAirports, setFilteredAirports] = useState('');
     
@@ -65,9 +64,7 @@ const SearchForm = () => {
        else if(departureAirport && parkingCheckIn && parkingCheckOut)
         {
             alert("Form Submitted")
-            
-            navigate(`/results?departureAirport=${departureAirport}&checkin=${parkingCheckIn}&checkout=${parkingCheckOut}`)
-            //window.location.href = `/results?departureAirport=${departureAirport}&checkin=${parkingCheckIn}&checkout=${parkingCheckOut}`
+            window.location.href = `/results?departureAirport=${departureAirport}&checkin=${parkingCheckIn}&checkout=${parkingCheckOut}`
 
         }
         else{
@@ -163,7 +160,7 @@ const SearchForm = () => {
                             
                             {loading ?<h1>Loading</h1>:null}
                             {(errors && errors.departureAirport)? <h4 style={{color:"white",backgroundColor:"Highlight"}}>Invaild Departure Airport</h4>:null}
-                            <AirportSuggetions airports={filteredAirports} selectAirport={selectAirport} />
+                            <AirportSuggestions airports={filteredAirports} selectAirport={selectAirport} />
 
                         </label>
                         <div className="col p-0 row m-0 mb-2 dates"><label
@@ -189,4 +186,4 @@ const SearchForm = () => {
     </section>
     );
 }
-export default SearchForm;
+export default SearchForm;

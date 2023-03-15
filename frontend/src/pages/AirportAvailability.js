@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const AirportAvailability = () => {
     return (
         <div className="content">

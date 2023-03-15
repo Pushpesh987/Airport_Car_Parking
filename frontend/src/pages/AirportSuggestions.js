@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const AirportSuggetions = ({airports=[],selectAirport}) => {
+const AirportSuggestions = ({airports=[],selectAirport}) => {
 
     if(airports.length===0){
         return null;
@@ -32,4 +32,4 @@ const AirportSuggetions = ({airports=[],selectAirport}) => {
     )
 }
 
-export default AirportSuggetions;
+export default AirportSuggestions;
